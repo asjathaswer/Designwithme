@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asjadh Designs | Graphic Design Studio</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit-icons.min.js"></script>
+
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+  background-color: #f9fbff;
+  color: #222;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  font-size: 1rem;
+  background: rgba(99, 145, 199, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+nav img {
+  height: 50px;
+  border-radius: 10px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #5a67d8;
+}
+
+/* ---------- Header ---------- */
+header {
+  text-align: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  padding: 25px 10px;
+  border-radius: 0 0 80px 80px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+header h1 {
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+}
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Offcanvas (Mobile menu) */
+.uk-offcanvas-bar {
+  background: linear-gradient(180deg, #003366, #0055aa);
+  color: white;
+}
+
+.uk-offcanvas-bar .uk-nav > li > a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 10px 0;
+  transition: color 0.3s;
+}
+
+.uk-offcanvas-bar .uk-nav > li > a:hover {
+  color: #ffd700;
+}
+
+/* Mobile logo center */
+@media (max-width: 768px) {
+  nav { padding: 15px 25px; }
+  header h1 { font-size: 2.4rem; }
+  section { padding: 60px 15px; }
+}
+
+/* ---------- SERVICE BANNER ---------- */
+.service-banner {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to right, rgba(0, 43, 128, 0.6), rgba(0, 140, 255, 0.6)), url('image/service-banner.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.service-banner h2 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* ---------- SERVICES SECTION ---------- */
+.h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.uk-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.uk-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.uk-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.uk-card-body {
+  padding: 20px;
+}
+
+.uk-card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ---------- FLOATING BUTTON ---------- */
+.floating-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  background: #0056d6;
+  transform: scale(1.1);
+}
+
+.uk-button-primary:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1) !important;
+  transform: scale(1.05);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #002a66;
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  margin-top: 40px;
+  font-size: 0.95rem;
+}
+
+/* ---------- RESPONSIVE FIXES ---------- */
+@media (max-width: 1024px) {
+  .service-banner { height: 550px; }
+  .uk-card img { height: 400px; }
+}
+
+@media (max-width: 750px) {
+  .service-banner {
+    height: 600px;
+    background-position: center top;
+  }
+  .service-banner h2 { font-size: 2rem; }
+  .h2 { font-size: 2rem; }
+
+  .uk-card img { height: 500px; }
+}
+
+@media (max-width: 480px) {
+  .service-banner { height: 700px; }
+  .uk-card img { height: 250px; }
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img src="image/logo1.png" alt="Logo">
+  <ul>
+    <li><a href="#service">Our service</a></li>
+    <li><a href="#location">location</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- OFFCANVAS MENU (for Mobile) -->
+<div id="offcanvas-nav" uk-offcanvas="overlay: true; flip: true;">
+  <div class="uk-offcanvas-bar uk-flex uk-flex-column uk-flex-middle uk-text-center">
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+    <a href="#" class="uk-logo uk-margin">
+      <img src="image/logo.jpeg" alt="Asjadh Designs" style="height:70px; border-radius:10px;">
+    </a>
+    <ul class="uk-nav uk-nav-default">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="uk-section uk-section-muted">
+  <div class="uk-container uk-text-center">
+<div class="uk-card uk-card-default uk-card-body uk-padding-remove uk-overflow-hidden " 
+     style="max-width: 800px; margin: 0 auto 40px; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.2);">
+  <img src="image/Designwithme.png" 
+       alt="Services Banner" 
+       style="width: 1000px; height: 250px; border-radius: 20px; display: block; object-fit: cover; object-position: center;">
+</div>
+
+    <h2 class="uk-text-center h2">Our Services</h2>
+
+    <hr class="hr">
+
+    <div class="uk-child-width-1-4@m uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 200;">
+      <div><div class="uk-card uk-card-default uk-text-center"><img src="image/logo.jpeg" alt="Logo Design"><div class="uk-card-body"><h3 class="uk-card-title">Logo Design & Branding</h3></div></div></div>
+      <div><div class="uk-card uk-card-default uk-text-center"><img src="image/letter head.jpeg" alt="Letterhead Design"><div class="uk-card-body"><h3 class="uk-card-title">Letterheads</h3></div></div></div>
+      <div><div class="uk-card uk-card-default uk-text-center"><img src="image/business card.jpeg" alt="Business Card Design"><div class="uk-card-body"><h3 class="uk-card-title">Business Card</h3></div></div></div>
+      <div><div class="uk-card uk-card-default uk-text-center"><img src="image/poster.jpeg" alt="Poster Design"><div class="uk-card-body"><h3 class="uk-card-title">Poster & Banner</h3></div></div></div>
+      <div><div class="uk-card uk-card-default uk-text-center"><img src="image/resume.jpeg" alt="Resume Design"><div class="uk-card-body"><h3 class="uk-card-title">Resume / CV Design</h3></div></div></div>
+      <div><div class="uk-card uk-card-default uk-text-center"><img src="image/menu.jpeg" alt="Menu Design"><div class="uk-card-body"><h3 class="uk-card-title">Menu Designs</h3></div></div></div>
+      <div><div class="uk-card uk-card-default uk-text-center"><img src="image/invitation card.png" alt="Invitation Card Design"><div class="uk-card-body"><h3 class="uk-card-title">Invitation Card</h3></div></div></div>
+      <div><div class="uk-card uk-card-default uk-text-center"><img src="image/website.jpeg" alt="Website Design"><div class="uk-card-body"><h3 class="uk-card-title">Portfolio Website Designs</h3></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="uk-section">
+  <div class="uk-container uk-text-center">
+    <h2 class="h2">Our Location</h2>
+    <hr>
+    <p>Come visit our design studio or connect online!</p>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.262865079339!2d79.8438554!3d7.2576651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2e90010c5eee5%3A0x205ec89b7da141ce!2sAsjadh%20Aswer!5e0!3m2!1sen!2slk!4v1730392100000!5m2!1sen!2slk"
+      width="100%" height="400" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="uk-section uk-section-muted">
+  <div class="uk-container uk-text-center">
+    <h2 class="h2">Contact Us</h2>
+    <hr>
+    <p>We’d love to hear from you. Reach out through any platform below:</p>
+    <div class="uk-margin-top">
+      <a href="mailto:asjathasjath111@gmail.com" class="uk-icon-button uk-button-danger" uk-icon="mail"></a>
+      <a href="https://wa.me/+94766728480" target="_blank" class="uk-icon-button uk-button-secondary" uk-icon="whatsapp"></a>
+      <a href="https://www.instagram.com/_design_with_me_0r" target="_blank" class="uk-icon-button uk-button-danger" uk-icon="instagram"></a>
+      <a href="tel:+94726422450" class="uk-icon-button uk-button-secondary" uk-icon="receiver"></a>
+    </div>
+
+    <!-- View Portfolio Button -->
+    <div class="uk-margin-large-top">
+      <a href="https://asjathaswer.github.io/asjathportfolio/" class="uk-button uk-button-primary uk-border-pill uk-button-large" style="background: linear-gradient(135deg, #469cff); border: none; color: #ffffff; font-weight: 600; padding: 1Opx 25px; transition: 0.3s;">
+        View My Portfolio
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING BUTTON -->
+<a href="https://wa.me/94766728480" class="floating-btn" uk-tooltip="Message Us">
+  <span uk-icon="comment"></span>
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <p>"Create with purpose, design with passion."</p>
+  <p>&copy; 2025 Asjadh Aswer. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
